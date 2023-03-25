@@ -4,12 +4,8 @@ import { provider, contractAddress, abi } from './contract/Interaction';
 import { Link } from 'react-router-dom';
 import { Stack, Typography, TextField, Button, AppBar, Toolbar } from '@mui/material';
 import { ethers } from 'ethers';
+import { StarsCanvas } from './components/canvas';
 // import Pic from './assets/pic.png';
-
-
-import { Helmet } from 'react-helmet';
-// import ScriptTag from 'react-script-tag';
-
 
 export default function Home() {
   const [isWalletConnected, setWalletConnected] = useState(false);
@@ -66,14 +62,13 @@ export default function Home() {
   return (
     <Stack sx={{ alignItems: 'center' }}>
 
-
       <Stack sx={{ mt: 1 }}>
         <Stack>
           {/* <img src={Pic}/> */}
         </Stack>
         <Stack>
           <Typography sx={{ fontSize: 50, fontWeight: 'bold' }}>MedicHQ</Typography>
-          {/* <Typography sx={{ fontSize: 25 }} >A Roboust healthcare system to preserve and exchange patient data <br /> through hospitals, diagnostic laboratories, pharmacy firms, and physicians</Typography> */}
+          <Typography sx={{ fontSize: 25 }} >A Roboust healthcare system to preserve and exchange patient data <br /> through hospitals, diagnostic laboratories, pharmacy firms, and physicians</Typography>
           {address !== '' ?
             <TextField id='text1' value={address} sx={{ width: 450, mt: 2 }} label='Your Address' /> :
             <Button variant='contained' sx={{ width: 200, mt: 2 }} onClick={() => { connectWallet() }} >Connect Metamask</Button>
@@ -81,7 +76,7 @@ export default function Home() {
 
         </Stack>
 
-        {/* <Stack sx={{ mt: 10 }}>
+        <Stack sx={{ mt: 10 }}>
           <Typography sx={{ fontSize: 40, fontWeight: 'bold' }}>Features:</Typography>
           <Stack sx={{ flexDirection: 'row' }}>
             <Stack sx={{ width: 200, textAlign: 'center', mr: 6 }}>
@@ -97,54 +92,36 @@ export default function Home() {
               <Typography sx={{ m: 0.5 }}>To make sure patients receive fastest treatment</Typography>
             </Stack>
           </Stack>
-        </Stack> */}
+        </Stack>
 
         <Stack sx={{ mt: 10 }}>
-          {/* <Typography sx={{ fontSize: 40, fontWeight: 'bold' }}>How to use :</Typography>
+          <Typography sx={{ fontSize: 40, fontWeight: 'bold' }}>How to use :</Typography>
           <Typography sx={{ fontSize: 20, fontWeight: 'bold' }}>Its easier than you think.</Typography>
           <ol>
             <li><Typography>Take the picture of your prescription/data </Typography></li>
             <li><Typography>Submit the prescription/data url</Typography></li>
             <li><Typography>Wooah! You are done.</Typography></li>
             <li><Typography>Now you can just share your metamask address to Medical firms to let them access your data</Typography></li>
-          </ol> */}
+          </ol>
           {address != '' ?
             <Stack>
-              <Typography sx={{ fontSize: 40, fontWeight: 'bold' }}>Add Your Reports :</Typography>
-
-              <Helmet>
-    <script src="./js/upload.js" type="module" />
-</Helmet>
-              <form id="inputs">
-              {/* <!-- The label for the hidden file input is styled as a button and can be clicked to select a file --> */}
-              <label class="select-button" for="file-input">Select an image file</label>
-              <input class="hidden" type="file" id="file-input" accept=".jpeg,.jpg,.png,.gif,image/*" />
-
-              <img id="image-preview" class="preview-image" />
-
-              <div class="spacer"></div>
-              <label for="caption-input">Enter a caption</label>
-              <input id="caption-input" placeholder="Enter a caption"/>
-
-              <button id="upload-button" disabled="true">Upload to Web3.Storage</button>
-            </form>
-
+              <Typography sx={{ fontSize: 40, fontWeight: 'bold' }}>Add Your Report :</Typography>
               <Stack sx={{ flexDirection: 'row' }}>
                 <TextField variant='filled' id='text2' label='URL of prescription/data' sx={{ width: 500, mr: 2 }} value={_url} onChange={(text) => { set_Url(text.target.value) }} />
                 <Button variant='contained' sx={{ width: 80 }} onClick={() => { addRecord() }}>Submit</Button>
               </Stack>
             </Stack> :
-            <Stack sx={{ color:'black', backgroundColor: 'white', alignItems: 'center', borderRadius: 2 }}>
-              <Typography sx={{ m: 1, fontSize: 20 }}>! Please connect to metamask to upload your report</Typography>
+            <Stack sx={{ backgroundColor: '#FF8181', alignItems: 'center', borderRadius: 2 }}>
+              <Typography sx={{ m: 1, fontSize: 20 }}>! Please connect to metamask to upload your Report</Typography>
             </Stack>
           }
         </Stack>
         <Stack sx={{ mt: 10 }}>
-          <Typography sx={{ fontSize: 40, fontWeight: 'bold' }}>Check your Reports:</Typography>
+          <Typography sx={{ fontSize: 40, fontWeight: 'bold' }}>Show Your Report :</Typography>
           {address != '' ?
-            <Button variant='contained' sx={{ width: 300 }} onClick={() => { getRecords() }}>Get all your data</Button> :
-            <Stack sx={{ color:'black', backgroundColor: 'white', alignItems: 'center', borderRadius: 2 }}>
-              <Typography sx={{ m: 1, fontSize: 20 }}>! Please connect to metamask to check your report</Typography>
+            <Button variant='contained' sx={{ width: 300 }} onClick={() => { getRecords() }}>Get all your reports</Button> :
+            <Stack sx={{ backgroundColor: '#FF8181', alignItems: 'center', borderRadius: 2 }}>
+              <Typography sx={{ m: 1, fontSize: 20 }}>! Please connect to metamask to get your Report</Typography>
             </Stack>
           }
 
@@ -166,18 +143,8 @@ export default function Home() {
               )
             })}
           </Stack>
-
-          {/* <Stack sx={{ mt: 10, flexDirection: 'row', alignItems: 'center', backgroundColor: '#EBEAF0', justifyContent: 'center', borderRadius: 10 }}>
-            <Stack>
-              <Typography sx={{ fontSize: 20, fontWeight: 'bold' }}>Not a Patient, but Medical firm.<br /> No Worries, we got'u!</Typography>
-              <Link to='/firm'>
-                <Button variant='contained' sx={{ width: 200 }}>Open MediChain Firm</Button></Link>
-            </Stack>
-            <img src={'https://img.freepik.com/free-vector/hand-drawn-epidemiology-illustration_23-2149707548.jpg?w=2000'} style={{ width: 400 }} />
-          </Stack> */}
-
-
         </Stack>
+        <StarsCanvas />
       </Stack>
     </Stack>
   )

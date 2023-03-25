@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { ethers } from "ethers";
 import { provider, contractAddress, abi } from "./contract/Interaction";
+import { EarthCanvas } from "./components/canvas";
 // import Pic from './assets/pic.png';
 
 const Firm = () => {
@@ -55,126 +56,144 @@ const Firm = () => {
   };
 
   return (
-    <Stack sx={{ alignItems: "center" }}>
-      <Stack sx={{ mt: 1, width: 1000 }}>
-        <Stack>{/* <img src={Pic}/> */}</Stack>
-        <Stack>
-          <Typography sx={{ fontSize: 50, fontWeight: "bold" }}>
-            MediChain Firm
-          </Typography>
+    <div className="contain">
+      <div className="parent-firm">
+        <div className="child1-firm">
+          <Stack sx={{ alignItems: "center" }} className="parent-firm">
+            <Stack sx={{ mt: 1, width: 1000 }}>
+              <Stack>{/* <img src={Pic}/> */}</Stack>
+              <Stack>
+                <Typography sx={{ fontSize: 50, fontWeight: "bold" }}>
+                  MedicHQ Firm
+                </Typography>
 
-          {address !== "" ? (
-            <TextField
-              value={address}
-              sx={{ width: 450, mt: 2 }}
-              label="Firm Address"
-            />
-          ) : (
-            <Button
-              variant="contained"
-              sx={{ width: 200, mt: 2 }}
-              onClick={() => {
-                connectWallet();
-              }}
-            >
-              Connect Metamask
-            </Button>
-          )}
-        </Stack>
-      </Stack>
+                {address !== "" ? (
 
-      <Stack sx={{ mt: 10 }}>
-        {address !== "" ? (
-          <Stack sx={{ flexDirection: "row" }}>
-            <TextField
-              placeholder="Enter patients address"
-              sx={{ width: 450 }}
-              value={patAdd}
-              onChange={(text) => {
-                setPatAdd(text.target.value);
-              }}
-            />
-            <Button
-              variant="contained"
-              sx={{ width: 50, ml: 2 }}
-              onClick={() => {
-                handleClick();
-              }}
-            >
-              Find
-            </Button>
-          </Stack>
-        ) : (
-          "Please Connect Metamask first"
-        )}
-
-        <Stack
-          sx={{
-            alignItems: "center",
-            flexDirection: "row",
-            mt: 5,
-            diaplay: "flex",
-            flexWrap: "wrap",
-            width: 1000,
-          }}
-        >
-          {allRec.map((u, i) => {
-            var date = ethers.utils.formatUnits(u.timestamp, 0);
-            var formatDate = new Date(+date);
-            console.log(new Date(+date));
-            return (
-              <Stack key={i} sx={{ m: 1 }}>
-                <Card sx={{ width: 300 }}>
-                  <CardActionArea href={u.url} target="_blank">
-                    <CardMedia component={"img"} image={u.url} height={300} />
-                    <CardContent sx={{ backgroundColor: "#939393" }}>
-                      <Typography sx={{ color: "#fff", fontWeight: "bold" }}>
-                        Date:{formatDate.getDate()}.{formatDate.getMonth()}.
-                        {formatDate.getFullYear()}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
+                  <TextField
+                    label="Firm Address"
+                    value={address}
+                    style={{ border: '2px solid white' }}
+                    id='text'
+                    sx={{ width: 450, mt: 2 }}
+                  />
+                ) : (
+                  <Button
+                    variant="contained"
+                    sx={{ width: 200, mt: 2 }}
+                    onClick={() => {
+                      connectWallet();
+                    }}
+                  >
+                    Connect Metamask
+                  </Button>
+                )}
               </Stack>
-            );
-          })}
-        </Stack>
+            </Stack>
 
-        <Stack
-          sx={{
-            mt: 10,
-            flexDirection: "row",
-            alignItems: "center",
-            backgroundColor: "#EBEAF0",
-            justifyContent: "center",
-            borderRadius: 10,
-          }}
-        >
-          <Stack>
-            <Typography sx={{ fontSize: 20, fontWeight: "bold" }}>
-              Not a Medical firm, but a Patient.
-              <br /> No Worries, we got'u!
-            </Typography>
+            <Stack sx={{ mt: 10 }}>
+              {address !== "" ? (
+                <Stack sx={{ flexDirection: "row" }} >
+                  <TextField className="placeh"
+                    placeholder="Enter patients address"
+                    id="text"
+                    style={{ border: '2px solid white', color: 'white' }}
+                    sx={{ width: 450 }}
+                    value={patAdd}
+                    onChange={(text) => {
+                      setPatAdd(text.target.value);
+                    }}
+                  />
+                  <Button
+                    variant="contained"
+                    sx={{ width: 50, ml: 2 }}
+                    onClick={() => {
+                      handleClick();
+                    }}
+                  >
+                    Find
+                  </Button>
+                </Stack>
+              ) : (
+                "Please Connect Metamask first"
+              )}
 
-            <Link to="/">
-              <Button
-                variant="contained"
-                href="https://medichain.fahadiqbal12.repl.co/"
-                sx={{ width: 200 }}
+              <Stack
+                sx={{
+                  alignItems: "center",
+                  flexDirection: "row",
+                  mt: 5,
+                  diaplay: "flex",
+                  flexWrap: "wrap",
+                  width: 1000,
+                }}
               >
-                Open MediChain{" "}
-              </Button>
-            </Link>
+                {allRec.map((u, i) => {
+                  var date = ethers.utils.formatUnits(u.timestamp, 0);
+                  var formatDate = new Date(+date);
+                  console.log(new Date(+date));
+                  return (
+                    <Stack key={i} sx={{ m: 1 }}>
+                      <Card sx={{ width: 300 }}>
+                        <CardActionArea href={u.url} target="_blank">
+                          <CardMedia component={"img"} image={u.url} height={300} />
+                          <CardContent sx={{ backgroundColor: "#939393" }}>
+                            <Typography sx={{ color: "#fff", fontWeight: "bold" }}>
+                              Date:{formatDate.getDate()}.{formatDate.getMonth()}.
+                              {formatDate.getFullYear()}
+                            </Typography>
+                          </CardContent>
+                        </CardActionArea>
+                      </Card>
+                    </Stack>
+                  );
+                })}
+              </Stack>
+
+              <Stack
+                sx={{
+                  mt: 10,
+                  flexDirection: "row",
+                  alignItems: "center",
+                  backgroundColor: "#EBEAF0",
+                  justifyContent: "center",
+                  borderRadius: 10,
+                  color: "black"
+                }}
+              >
+                {/* <Stack>
+                  <Typography sx={{ fontSize: 20, fontWeight: "bold" }}>
+                    Not a MedicHQ firm, but a Patient.
+                    <br /> No Worries, we got'u!
+                  </Typography>
+
+                  <Link to="/">
+                    <Button
+                      variant="contained"
+                      href="https://medichain.fahadiqbal12.repl.co/"
+                      sx={{ width: 200 }}
+                    >
+                      Open MediChain{" "}
+                    </Button>
+                  </Link>
+                </Stack> */}
+                {/* <img
+                  src={
+                    "https://img.freepik.com/free-vector/hand-drawn-epidemiology-illustration_23-2149707548.jpg?w=2000"
+                  }
+                  style={{ width: 250 }}
+                /> */}
+              </Stack>
+            </Stack>
           </Stack>
-          <img
-            src={
-              "https://img.freepik.com/free-vector/hand-drawn-epidemiology-illustration_23-2149707548.jpg?w=2000"
-            }
-            style={{ width: 400 }}
-          />
-        </Stack>
-      </Stack>
-    </Stack>
+
+        </div>
+        <div className="child2-firm">
+          <Stack>
+            <EarthCanvas />
+          </Stack>
+        </div>
+      </div>
+    </div>
   );
 };
 
