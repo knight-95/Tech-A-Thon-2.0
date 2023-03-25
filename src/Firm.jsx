@@ -67,13 +67,14 @@ const Firm = () => {
                 <Typography sx={{ fontSize: 50, fontWeight: "bold" }}>
                   MedicHQ Firm
                 </Typography>
+                <br />
 
                 {address !== "" ? (
 
                   <TextField
                     label="Firm Address"
                     value={address}
-                    style={{ border: '2px solid white' }}
+                    style={{ border: '1px solid white', borderRadius:'5px' }}
                     id='text'
                     sx={{ width: 450, mt: 2 }}
                   />
@@ -97,7 +98,7 @@ const Firm = () => {
                   <TextField className="placeh"
                     placeholder="Enter patients address"
                     id="text"
-                    style={{ border: '2px solid white', color: 'white' }}
+                    style={{ border: '1px solid white', color: 'white', borderRadius:'5px' }}
                     sx={{ width: 450 }}
                     value={patAdd}
                     onChange={(text) => {

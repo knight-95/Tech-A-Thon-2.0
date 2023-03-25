@@ -1,3 +1,4 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@300&family=Sacramento&display=swap'); */
 body {
   margin: 0;
   background-repeat: no-repeat;
@@ -6,13 +7,21 @@ body {
   background-color: black;
 }
 .heading{
+  margin-top: 0px;
   color: white;
   /* display: flex; */
   text-align: center;
   justify-content: center;
   font-size: 5rem;
-  font-family:cursive;
-  margin-top: 30px;
+  font-family: cursive;
+  /* margin-top: 30px; */
+}
+.subheading{
+  margin-top: -25px;
+  font-family: cursive;
+  text-align: center;
+  font-size: 25px;
+  padding-bottom: 15px;
 }
 
 .newhome {
@@ -31,8 +40,6 @@ body {
   display: flex;
   flex-direction: row;
   margin-top: 30px;
-  text-align: center;
-  justify-content: center;
 }
 
 .child1 {
@@ -47,6 +54,7 @@ body {
   width: 50%;
   height: 100vh;
 }
+
 
 .patient {
   z-index: 10;
@@ -64,7 +72,12 @@ body {
   text-align: center;
   justify-content: center;
 }
-
+.patient>p{
+  padding-bottom: 10px;
+}
+.doctor>p{
+  padding-bottom: 10px;
+}
 .doctor {
   z-index: 10;
   color: aliceblue;
@@ -86,46 +99,18 @@ body {
   position: absolute;
   top: 0px;
 }
-         
-.btn{
-  background-image: linear-gradient(to right, #005C97 0%, #363795  51%, #005C97  100%);
-  margin: 10px;
-  padding: 15px 45px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;            
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-  display: block;
+.btn {
+  width: 7rem;
+  height: 2rem;
+  border-radius: 5px;
+  background-color: rgb(34, 34, 158);
+  color: antiquewhite;
 }
 
 .btn:hover {
-  background-position: right center; /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
-}
-
-         
-.btn-grad {
-  background-image: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%);
-  margin: 10px;
-  padding: 15px 45px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;            
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-  display: block;
-}
-
-.btn-grad:hover {
-  background-position: right center; /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
+  background-color: rgb(18, 18, 71);
+  cursor: pointer;
+  color: aliceblue;
 }
 
 
@@ -147,24 +132,6 @@ body {
   width: 50%;
 }
 
-
-.parent-home {
-  margin-top: 23px;
-  display: flex;
-  flex-direction: row;
-}
-
-.child1-home {
-  width: 60%;
-  margin-left: 10rem;
-}
-
-.child2-home {
-  margin-top: 100px;
-  margin-right: 80px;
-  width: 40%;
-}
-
 #text{
   color: white;
 }
@@ -176,7 +143,8 @@ body {
 #text1{
   color: white;
   margin-top: 5px;
-  border: 3px solid white;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 #text1-label{
   color: white;
@@ -186,7 +154,8 @@ body {
 }
 #text2{
   color: white;
-  border: 3px solid white;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
 #text2-label{
@@ -194,103 +163,52 @@ body {
   
 }
 
-
-/*Upload css */
-
-#welcome-message {
-  max-width: 600px;
-  margin: 40px;
+#bar{
+  width: 60%;
 }
 
-#inputs {
-  display: flex;
-  flex-direction: column;
-  min-height: 600px;
+#earth-home{
+  margin-top: 12%;
 }
 
-
-#upload-ui {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#upload-in-progress {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#upload-in-progress.hidden {
-  display: none;
-}
-
-#upload-success {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  align-items: center;
-}
-
-#upload-success.hidden {
-  display: none;
-}
-
-#success-links {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-#output {
-  padding: 16px;
-  margin-top: auto;
-  font-family: Courier New, ui-monospace, monospace;
-  font-weight: 500;
-  line-height: 1.6;
-  min-height: 200px;
-  width: 100%;
-  overflow-y: scroll;
-}
-
-#drop-area {
-  border: 2px dashed #ccc;
-  border-radius: 20px;
-  max-width: 550px;
-  font-family: sans-serif;
-  padding: 20px;
-  margin: 40px;
-}
-
-#drop-area.highlight {
-  border-color: var(--main-accent-color);
-}
-
-.select-button {
-  display: inline-block;
-  padding: 10px;
-  background: var(--main-accent-color);
-  color: var(--button-text-color);
-  cursor: pointer;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+#home-head{
   text-align: center;
 }
-.select-button:hover {
-  filter: brightness(1.2);
+#field1{
+  width: 30%;
+  background-color: black;
+  color: white;
 }
 
-#upload-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px;
+#input:hover{
+  cursor: pointer;
+}
+#copy-btn{
+  margin-left: 12px;
 }
 
-.preview-image {
-  max-height: 60vh;
-  max-width: 800px;
+.btn-main{
+  background-image: linear-gradient(to right, #005C97 0%, #363795  51%, #005C97  100%);
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  cursor: pointer;
 }
 
-#success-links {
-  margin: 30px;
+.btn-main:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-center{
+  padding-left: 50px;
+  justify-content: center;
 }

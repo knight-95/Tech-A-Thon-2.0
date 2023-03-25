@@ -30,10 +30,6 @@ const Upload = () => {
     setFile(url);
   };
 
-  function myFunction() {
-        document.getElementById("second").value = document.getElementById("first").value;
-}
-
   function copyText() {
     // Get the text field
     var copyText = document.getElementById("field1");
@@ -49,21 +45,25 @@ const Upload = () => {
   }
 
   return (
-    <div className="App">
-      <img alt="hi" src={file} />
+    <div >
       <div>
-        <label for="file">Choose file to upload</label>
+        <h2 htmlFor="file" style={{fontFamily:'sans-serif'}}>Choose file to upload</h2>
+        {/* <br /> */}
         <input type="file" id="input" name="file" multiple />
       </div>
-      <div>
-        <button onClick={handleUpload}>Submit</button>
-      </div>
-      {/* <div id="field1">`{IMG_URL}`</div> */}
-      <label>URL : </label>
-      <input type="text" id="field1" value={IMG_URL}></input><br></br>
-      <button id='copy-btn' onClick={copyText}>Copy Url</button>
       <br />
-      <label htmlFor="">Paste the Copied link Below</label>
+      <div className="upload-btn">
+        <button onClick={handleUpload} className='btn'>Submit</button>
+      </div>
+      <br />
+      <label style={{fontFamily:'sans-serif'}}>URL : </label>
+      <input type="text" id="field1" value={IMG_URL}></input>
+      
+      <button id='copy-btn' onClick={copyText} className='btn'>Copy URL</button>
+      <br />
+      <br />
+      <br />
+      <h2 style={{fontFamily:'sans-serif'}}>Paste the copied link below</h2>
     </div>
   );
 }

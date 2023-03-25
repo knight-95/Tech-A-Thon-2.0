@@ -6,6 +6,9 @@ import { Stack, Typography, TextField, Button, AppBar, Toolbar } from '@mui/mate
 import { ethers } from 'ethers';
 // import Pic from './assets/pic.png';
 import IMG_URL from './Upload';
+import blockchain from './assets/blockchain.gif';
+import feature2 from './assets/feature2.avif'
+import feature3 from './assets/feature3.png'
 
 
 import { Helmet } from 'react-helmet';
@@ -64,117 +67,103 @@ export default function Home() {
     }
   }
 
-  function copyPasteUrl() {
-    document.getElementById("text2").value = document.getElementById("field1").value
-
-  }
 
   return (
-    <Stack sx={{ alignItems: 'center' }}>
-      <StarsCanvas/>
-      <EarthCanvas/>
+    <div className='parent'>
+      <div className='child1'>
+        <Stack sx={{ alignItems: 'center' }}>
+          <StarsCanvas />
 
-      <Stack sx={{ mt: 1 }}>
-        <Stack>
-          {/* <img src={Pic}/> */}
-        </Stack>
-        <Stack>
-          <Typography sx={{ fontSize: 50, fontWeight: 'bold' }}>MedicHQ</Typography>
-          {/* <Typography sx={{ fontSize: 25 }} >A Roboust healthcare system to preserve and exchange patient data <br /> through hospitals, diagnostic laboratories, pharmacy firms, and physicians</Typography> */}
-          {address !== '' ?
-            <TextField id='text1' value={address} sx={{ width: 450, mt: 2 }} label='Your Address' /> :
-            <Button variant='contained' sx={{ width: 200, mt: 2 }} onClick={() => { connectWallet() }} >Connect Metamask</Button>
-          }
+          <Stack sx={{ mt: 1 }}>
+            <Stack>
+            </Stack>
+            <Stack>
+              <Typography sx={{ fontSize: 50, fontWeight: 'bold' }} id='home-head'>MedicHQ</Typography>
+              <br />
+              <br />
+              <Typography sx={{ fontSize: 25, fontFamily:'cursive'}} >A decentralised healthcare system to preserve and exchange patient data <br /> between hospitals, laboratories, pharmacies and physicians</Typography>
+              <br />
+              {/* <br /> */}
+              {address !== '' ?
+                <TextField id='text1' value={address} sx={{ width: 450, mt: 2 }} label='Your Address' /> :
+                <Button variant='contained' sx={{ width: 200, mt: 2 }} onClick={() => { connectWallet() }} >Connect Metamask</Button>
+              }
 
-        </Stack>
+            </Stack>
 
-        {/* <Stack sx={{ mt: 10 }}>
+            <Stack sx={{ mt: 10 }}>
           <Typography sx={{ fontSize: 40, fontWeight: 'bold' }}>Features:</Typography>
+          <br />
           <Stack sx={{ flexDirection: 'row' }}>
             <Stack sx={{ width: 200, textAlign: 'center', mr: 6 }}>
-              <img src={'https://png.pngtree.com/png-vector/20230111/ourmid/pngtree-blockchain-vector-icon-png-image_6559271.png'} style={{ width: 200 }} />
+              <img src={blockchain} style={{ width: 200, height:200, borderRadius:100 }} />
               <Typography sx={{ m: 0.5 }}>Built on top of Blockcahin Technology</Typography>
             </Stack>
             <Stack sx={{ width: 200, textAlign: 'center', mr: 6 }}>
-              <img src={'https://img.freepik.com/free-icon/clipboard_318-372777.jpg?w=360'} style={{ width: 200 }} />
+              <img src={feature2} style={{ width: 200 }} />
               <Typography sx={{ m: 0.5 }}>Share medical records in the health care system</Typography>
             </Stack>
             <Stack sx={{ width: 200, textAlign: 'center' }}>
-              <img src={'https://cdn-icons-png.flaticon.com/512/4228/4228704.png'} style={{ width: 200 }} />
+              <img src={feature3} style={{ width: 200 }} />
               <Typography sx={{ m: 0.5 }}>To make sure patients receive fastest treatment</Typography>
             </Stack>
           </Stack>
-        </Stack> */}
-
-        <Stack sx={{ mt: 10 }}>
-          {/* <Typography sx={{ fontSize: 40, fontWeight: 'bold' }}>How to use :</Typography>
-          <Typography sx={{ fontSize: 20, fontWeight: 'bold' }}>Its easier than you think.</Typography>
-          <ol>
-            <li><Typography>Take the picture of your prescription/data </Typography></li>
-            <li><Typography>Submit the prescription/data url</Typography></li>
-            <li><Typography>Wooah! You are done.</Typography></li>
-            <li><Typography>Now you can just share your metamask address to Medical firms to let them access your data</Typography></li>
-          </ol> */}
-          {address != '' ?
-            <Stack>
-              <Typography sx={{ fontSize: 40, fontWeight: 'bold' }}>Add Your Reports :</Typography>
-
-              {/* <Helmet>
-                <script src="./js/upload.js" type="module" />
-              </Helmet> */}
-              <Upload />
-
-
-              <Stack sx={{ flexDirection: 'row' }}>
-                <TextField variant='filled' id='text2' label='URL of prescription/data' sx={{ width: 500, mr: 2 }} value={_url} onChange={(text) => { set_Url(text.target.value) }} />
-                <Button variant='contained' sx={{ width: 80 }} onClick={() => { addRecord() }}>Submit</Button>
-              </Stack>
-            </Stack> :
-            <Stack sx={{ color: 'black', backgroundColor: 'white', alignItems: 'center', borderRadius: 2 }}>
-              <Typography sx={{ m: 1, fontSize: 20 }}>! Please connect to metamask to upload your report</Typography>
-            </Stack>
-          }
         </Stack>
-        <Stack sx={{ mt: 10 }}>
-          <Typography sx={{ fontSize: 40, fontWeight: 'bold' }}>Check your Reports:</Typography>
-          {address != '' ?
-            <Button variant='contained' sx={{ width: 300 }} onClick={() => { getRecords() }}>Get all your data</Button> :
-            <Stack sx={{ color: 'black', backgroundColor: 'white', alignItems: 'center', borderRadius: 2 }}>
-              <Typography sx={{ m: 1, fontSize: 20 }}>! Please connect to metamask to check your report</Typography>
-            </Stack>
-          }
 
-          <Stack sx={{ alignItems: "center", flexDirection: 'row', mt: 5, display: 'flex', flexWrap: 'wrap', width: 1000 }}>
-            {allRec.map((u, i) => {
-              var date = ethers.utils.formatUnits(u.timestamp, 0)
-              var formatDate = new Date(+date)
-              console.log(new Date(+date))
-              return (
-                <Stack key={i} sx={{ width: 200, textAlign: 'center', m: 1 }} >
-                  <img src={u.url} />
+            <Stack sx={{ mt: 10 }}>
+              {address != '' ?
+                <Stack>
+                  <Typography sx={{ fontSize: 40, fontWeight: 'bold' }}>Add Your Reports :</Typography>
+
+                  <Upload />
+
                   <Stack sx={{ flexDirection: 'row' }}>
-                    <Typography>Date:{formatDate.getDate()}.{formatDate.getMonth()}.{formatDate.getFullYear()}</Typography>
-                    <a href={u.url} target="_blank" ><img src={'https://static.thenounproject.com/png/196595-200.png'} style={{ width: 20, marginLeft: 10 }} /></a>
+                    <TextField variant='filled' id='text2' label='URL of prescription/data' sx={{ width: 500, mr: 2 }} value={_url} onChange={(text) => { set_Url(text.target.value) }} />
+                    <Button variant='contained' sx={{ width: 80 }} onClick={() => { addRecord() }}>Submit</Button>
                   </Stack>
-
+                </Stack> :
+                <Stack sx={{ color: 'black', backgroundColor: 'white', alignItems: 'center', borderRadius: 2 }} id='bar'>
+                  <Typography sx={{ m: 1, fontSize: 20 }} >! Please connect to metamask to upload your report</Typography>
                 </Stack>
-
-              )
-            })}
-          </Stack>
-
-          {/* <Stack sx={{ mt: 10, flexDirection: 'row', alignItems: 'center', backgroundColor: '#EBEAF0', justifyContent: 'center', borderRadius: 10 }}>
-            <Stack>
-              <Typography sx={{ fontSize: 20, fontWeight: 'bold' }}>Not a Patient, but Medical firm.<br /> No Worries, we got'u!</Typography>
-              <Link to='/firm'>
-                <Button variant='contained' sx={{ width: 200 }}>Open MediChain Firm</Button></Link>
+              }
             </Stack>
-            <img src={'https://img.freepik.com/free-vector/hand-drawn-epidemiology-illustration_23-2149707548.jpg?w=2000'} style={{ width: 400 }} />
-          </Stack> */}
+            <Stack sx={{ mt: 10 }}>
+              <Typography sx={{ fontSize: 40, fontWeight: 'bold' }}>Check your reports:</Typography>
+              <br />
+              {address != '' ?
+                <Button variant='contained' sx={{ width: 300 }} onClick={() => { getRecords() }}>Get all your data</Button> :
+                <Stack sx={{ color: 'black', backgroundColor: 'white', alignItems: 'center', borderRadius: 2 }} id='bar'>
+                  <Typography sx={{ m: 1, fontSize: 20 }}>! Please connect to metamask to check your report</Typography>
+                </Stack>
+              }
+
+              <Stack sx={{ alignItems: "center", flexDirection: 'row', mt: 5, display: 'flex', flexWrap: 'wrap', width: 1000 }}>
+                {allRec.map((u, i) => {
+                  var date = ethers.utils.formatUnits(u.timestamp, 0)
+                  var formatDate = new Date(+date)
+                  console.log(new Date(+date))
+                  return (
+                    <Stack key={i} sx={{ width: 200, textAlign: 'center', m: 1 }} >
+                      <img src={u.url} />
+                      <Stack sx={{ flexDirection: 'row' }}>
+                        <Typography>Date:{formatDate.getDate()}.{formatDate.getMonth()}.{formatDate.getFullYear()}</Typography>
+                        <a href={u.url} target="_blank" ><img src={'https://static.thenounproject.com/png/196595-200.png'} style={{ width: 20, marginLeft: 10 }} /></a>
+                      </Stack>
+
+                    </Stack>
+
+                  )
+                })}
+              </Stack>
 
 
+            </Stack>
+          </Stack>
         </Stack>
-      </Stack>
-    </Stack>
+      </div>
+      <div className='child2' id='earth-home'>
+        <EarthCanvas />
+      </div>
+    </div>
   )
 }
