@@ -22,12 +22,14 @@ const NewHome = () => {
         <div className='container child1'>
           <div className='patient '>
             <h2>Patients Portal</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum dolorem distinctio voluptatem sequi ratione cupiditate molestiae officiis id esse, exercitationem molestias quas reprehenderit.</p>
+            <img src="https://media0.giphy.com/media/2kZhrMQsaFAmDIWIBx/giphy.gif?cid=6c09b9526okxtgmnuzqnddn1qwob4utexhmcqqtuvqsc8rei&rid=giphy.gif&ct=s" alt="patient report" width="300" height="200"/>
+            <p>Want to upload your records ⁉️</p>
             <button className='btn' onClick={routeChange}>Click Here</button>
           </div>
-          <div className='doctor '>
+          <div className='doctor'>
             <h2>Doctors Portal</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum dolorem distinctio voluptatem sequi ratione cupiditate molestiae officiis id esse, exercitationem molestias quas reprehenderit.</p>
+            <img src="https://media2.giphy.com/media/LHtQ0EcqJCAU6kX2Zk/giphy.gif" alt="doctor gif" height="200"/>
+            <p>Want to view patient's record ⁉️</p>
             <button className='btn' onClick={routeChange2}>Click Here</button>
           </div>
         </div>

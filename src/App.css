@@ -31,6 +31,8 @@ body {
   display: flex;
   flex-direction: row;
   margin-top: 30px;
+  text-align: center;
+  justify-content: center;
 }
 
 .child1 {
@@ -49,30 +51,34 @@ body {
 .patient {
   z-index: 10;
   color: aliceblue;
-  margin-left: 23px;
-  height: 40%;
-  padding: 5px 45px 0px 45px;
-  border: 2px solid rgb(40, 34, 34);
+  margin-left: -23px;
+  margin-right: 23px;
+  height: 60%;
+  /* padding: 5px 45px 0px 45px; */
+  border: 1px solid rgb(40, 34, 34);
   border-radius: 10px;
   background: rgba(49, 119, 196, 0.05);
   backdrop-filter: blur(3.5px);
   -webkit-backdrop-filter: blur(3.5px);
   border-radius: 10px;
+  text-align: center;
+  justify-content: center;
 }
 
 .doctor {
   z-index: 10;
   color: aliceblue;
-  margin-left: 50px;
-  height: 40%;
-  padding: 5px 45px 0px 45px;
-  border: 2px solid rgb(40, 34, 34);
+  /* margin-left: 50px; */
+  height: 60%;
+  /* padding: 5px 45px 0px 45px; */
+  border: 1px solid rgb(40, 34, 34);
   border-radius: 10px;
   /* background: rgba(255, 255, 255, 0.71); */
   background: rgba(49, 119, 196, 0.05);
   backdrop-filter: blur(3.5px);
   -webkit-backdrop-filter: blur(3.5px);
   border-radius: 10px;
+  text-align: center;
 }
 .stars {
   height: 100%;
@@ -80,19 +86,46 @@ body {
   position: absolute;
   top: 0px;
 }
-.btn {
-  width: 7rem;
-  height: 2rem;
-  border-radius: 5px;
-  margin-left: 12px;
-  background-color: rgb(34, 34, 158);
-  color: antiquewhite;
+         
+.btn{
+  background-image: linear-gradient(to right, #005C97 0%, #363795  51%, #005C97  100%);
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
 }
 
 .btn:hover {
-  background-color: rgb(18, 18, 71);
-  cursor: pointer;
-  color: aliceblue;
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+         
+.btn-grad {
+  background-image: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%);
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
 
