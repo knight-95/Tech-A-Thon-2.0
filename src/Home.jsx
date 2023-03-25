@@ -5,13 +5,17 @@ import { Link } from 'react-router-dom';
 import { Stack, Typography, TextField, Button, AppBar, Toolbar } from '@mui/material';
 import { ethers } from 'ethers';
 // import Pic from './assets/pic.png';
+import IMG_URL from './Upload';
 
 
 import { Helmet } from 'react-helmet';
+import Upload from './Upload';
+import { EarthCanvas, StarsCanvas } from './components/canvas';
 // import ScriptTag from 'react-script-tag';
 
 
 export default function Home() {
+  // console.log("home url "+ IMG_URL); 
   const [isWalletConnected, setWalletConnected] = useState(false);
 
 
@@ -60,12 +64,15 @@ export default function Home() {
     }
   }
 
+  function copyPasteUrl() {
+    document.getElementById("text2").value = document.getElementById("field1").value
 
-
+  }
 
   return (
     <Stack sx={{ alignItems: 'center' }}>
-
+      <StarsCanvas/>
+      <EarthCanvas/>
 
       <Stack sx={{ mt: 1 }}>
         <Stack>
@@ -112,29 +119,18 @@ export default function Home() {
             <Stack>
               <Typography sx={{ fontSize: 40, fontWeight: 'bold' }}>Add Your Reports :</Typography>
 
-              <Helmet>
-    <script src="./js/upload.js" type="module" />
-</Helmet>
-              <form id="inputs">
-              {/* <!-- The label for the hidden file input is styled as a button and can be clicked to select a file --> */}
-              <label class="select-button" for="file-input">Select an image file</label>
-              <input class="hidden" type="file" id="file-input" accept=".jpeg,.jpg,.png,.gif,image/*" />
+              {/* <Helmet>
+                <script src="./js/upload.js" type="module" />
+              </Helmet> */}
+              <Upload />
 
-              <img id="image-preview" class="preview-image" />
-
-              <div class="spacer"></div>
-              <label for="caption-input">Enter a caption</label>
-              <input id="caption-input" placeholder="Enter a caption"/>
-
-              <button id="upload-button" disabled="true">Upload to Web3.Storage</button>
-            </form>
 
               <Stack sx={{ flexDirection: 'row' }}>
                 <TextField variant='filled' id='text2' label='URL of prescription/data' sx={{ width: 500, mr: 2 }} value={_url} onChange={(text) => { set_Url(text.target.value) }} />
                 <Button variant='contained' sx={{ width: 80 }} onClick={() => { addRecord() }}>Submit</Button>
               </Stack>
             </Stack> :
-            <Stack sx={{ color:'black', backgroundColor: 'white', alignItems: 'center', borderRadius: 2 }}>
+            <Stack sx={{ color: 'black', backgroundColor: 'white', alignItems: 'center', borderRadius: 2 }}>
               <Typography sx={{ m: 1, fontSize: 20 }}>! Please connect to metamask to upload your report</Typography>
             </Stack>
           }
@@ -143,7 +139,7 @@ export default function Home() {
           <Typography sx={{ fontSize: 40, fontWeight: 'bold' }}>Check your Reports:</Typography>
           {address != '' ?
             <Button variant='contained' sx={{ width: 300 }} onClick={() => { getRecords() }}>Get all your data</Button> :
-            <Stack sx={{ color:'black', backgroundColor: 'white', alignItems: 'center', borderRadius: 2 }}>
+            <Stack sx={{ color: 'black', backgroundColor: 'white', alignItems: 'center', borderRadius: 2 }}>
               <Typography sx={{ m: 1, fontSize: 20 }}>! Please connect to metamask to check your report</Typography>
             </Stack>
           }

@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { ethers } from "ethers";
 import { provider, contractAddress, abi } from "./contract/Interaction";
-import { EarthCanvas } from "./components/canvas";
+import { EarthCanvas, StarsCanvas } from "./components/canvas";
 // import Pic from './assets/pic.png';
 
 const Firm = () => {
@@ -57,6 +57,7 @@ const Firm = () => {
 
   return (
     <div className="contain">
+      <StarsCanvas/>
       <div className="parent-firm">
         <div className="child1-firm">
           <Stack sx={{ alignItems: "center" }} className="parent-firm">
@@ -193,6 +194,7 @@ const Firm = () => {
           </Stack>
         </div>
       </div>
+      {/* <StarsCanvas /> */}
     </div>
   );
 };
