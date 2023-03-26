@@ -1,4 +1,4 @@
-# MedicHQ : A Decentralised Healthcase System
+# MedicHQ : A Decentralised Healthcare System
 - A Decentralised healthcare system to preserve and exchange patient data between hospitals, laboratories, pharmacies and physicians
 <br/>
 
