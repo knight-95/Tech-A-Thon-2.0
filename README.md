@@ -25,12 +25,12 @@
 
 Overall, storing medical records on a blockchain can improve security, privacy, accessibility, accuracy, efficiency, and interoperability in the healthcare industry.
 
-<h3>Patient's Portal</h3>
+<h3>Patient's Portal:</h3>
 <img width="1280" alt="Screenshot 2023-03-26 at 05 38 08" src="https://user-images.githubusercontent.com/79582395/227749528-8be1aa91-5419-455c-909d-f4bf5d59d8e9.png">
 
 
 
-<h3>Adding Your Reports </h3>
+<h3>Adding Your Reports: </h3>
 
 - Here first we select the file we want to upload, then click on Submit Button
 - A link will be returned
@@ -38,19 +38,18 @@ Overall, storing medical records on a blockchain can improve security, privacy, 
 
 <img width="1191" alt="Screenshot 2023-03-26 at 06 27 42" src="https://user-images.githubusercontent.com/79582395/227749525-7a580f35-a194-4436-94dc-11ecd3090917.png">
 
-
-- Here we can add the amount of <b>MATIC</b> we want to raise
-- We can additionally provide with the relevant image
-
-
-<h3>Verifying transaction on Polygon network</h3>
+<h3>Verifying transaction on Polygon network:</h3>
 
 - <p>Contract Verification and transaction status at : https://mumbai.polygonscan.com/address/0x9Fc3Acba729F55149cBaf114457798Ce557575b6</p>
-
-
+<img width="1279" alt="Screenshot 2023-03-26 at 05 30 05" src="https://user-images.githubusercontent.com/79582395/227750330-07e3c958-911c-4912-9484-df34c94a9eec.png">
 
 - Our project is based on Polygon, and our smart contract is deployed on Polygon Testnet
 
+
+<h3>Request's at web3.storage:</h3>
+<img width="1276" alt="Screenshot 2023-03-26 at 06 57 15" src="https://user-images.githubusercontent.com/79582395/227750337-b33c826b-a827-40d1-979d-954f267cd04a.png">
+- Application is connected with IPFS through web3.storage
+- Web3.storage is responsible for storing and retrieval of data
 
 <h3>Tech Stack used :</h3>
 <h5>ReactJS, Javascript, Solidity, Tailwind CSS, IPFS, web3.storage , Polygon Testnet, Metamask, Vite, Replit</h5>
