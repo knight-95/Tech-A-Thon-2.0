@@ -4,8 +4,8 @@
 
 ![home_page](https://user-images.githubusercontent.com/79582395/227748683-5ec537e9-9b51-4c57-95eb-a53df678f331.jpeg)
  
- <h1>Live Deployed Link   : https://crowdsourcing.netlify.app/</h1>
- <h2> Replit Deployed Link: https://campaignhq.knight95.repl.co/</h2>
+ <h1>Live Deployed Link   : https://medichq.netlify.app/</h1>
+<!--  <h2> Replit Deployed Link: https://campaignhq.knight95.repl.co/</h2> -->
  <h2>YouTube Working Demo : https://youtu.be/QSqvSOd71zc</h2>
  <br/>
  - Used Polygon Testnet for Smart Contract Deployment and web3.storage for Storing and Retrieving files from IPFS (Inter Planetary File System)
