@@ -26,10 +26,18 @@
 Overall, storing medical records on a blockchain can improve security, privacy, accessibility, accuracy, efficiency, and interoperability in the healthcare industry.
 
 <h3>Patient's Portal</h3>
+<img width="1280" alt="Screenshot 2023-03-26 at 05 38 08" src="https://user-images.githubusercontent.com/79582395/227749528-8be1aa91-5419-455c-909d-f4bf5d59d8e9.png">
 
 
-<h3>Creating a campaign </h3>
-<img width="1272" alt="Screenshot 2023-02-11 at 22 51 56" src="https://user-images.githubusercontent.com/79582395/218273848-d1680215-a895-4592-aa75-098d760827da.png">
+
+<h3>Adding Your Reports </h3>
+
+- Here first we select the file we want to upload, then click on Submit Button
+- A link will be returned
+- Then paste the link below input field and click submit to initiate transation
+
+<img width="1191" alt="Screenshot 2023-03-26 at 06 27 42" src="https://user-images.githubusercontent.com/79582395/227749525-7a580f35-a194-4436-94dc-11ecd3090917.png">
+
 
 - Here we can add the amount of <b>MATIC</b> we want to raise
 - We can additionally provide with the relevant image
@@ -45,12 +53,10 @@ Overall, storing medical records on a blockchain can improve security, privacy, 
 
 
 <h3>Tech Stack used :</h3>
-<h5>ReactJS, Javascript, Solidity, Tailwind CSS, ThirdWeb, Polygon Testnet, Metamask, Replit</h5>
+<h5>ReactJS, Javascript, Solidity, Tailwind CSS, IPFS, web3.storage , Polygon Testnet, Metamask, Vite, Replit</h5>
 
 # Demo : 
 
-
-https://user-images.githubusercontent.com/79582395/219052136-17266989-ca66-4d78-93f3-4398bddb767b.mp4
 
 
 
