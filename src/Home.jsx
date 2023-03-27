@@ -6,7 +6,7 @@ import { Stack, Typography, TextField, Button, AppBar, Toolbar } from '@mui/mate
 import { ethers } from 'ethers';
 // import Pic from './assets/pic.png';
 import IMG_URL from './Upload';
-import blockchain from './assets/blockchain.gif';
+// import blockchain from './assets/blockchain.gif';
 import feature2 from './assets/feature2.avif'
 import feature3 from './assets/feature3.png'
 
@@ -96,7 +96,7 @@ export default function Home() {
           <br />
           <Stack sx={{ flexDirection: 'row' }}>
             <Stack sx={{ width: 200, textAlign: 'center', mr: 6 }}>
-              <img src={blockchain} style={{ width: 200, height:200, borderRadius:100 }} />
+              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/143cdc64702723.5ae00a2ba8cd0.gif" style={{ width: 200, height:200, borderRadius:100 }} />
               <Typography sx={{ m: 0.5 }}>Built on top of Blockcahin Technology</Typography>
             </Stack>
             <Stack sx={{ width: 200, textAlign: 'center', mr: 6 }}>

@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { EarthCanvas, StarsCanvas } from './components/canvas';
 import reports from "./assets/reports.gif";
-import doctors from "./assets/doctors.gif";
+// import doctors from "./assets/doctors.gif";
 
 const NewHome = () => {
   let navigate = useNavigate();
@@ -38,7 +38,7 @@ const NewHome = () => {
           </div>
           <div className="doctor">
             <h2 style={{ fontFamily: '"Roboto","Helvetica","Arial",sans-serif' }}>Doctors Portal</h2>
-            <img src={doctors} alt="doctor gif" height="200" />
+            <img src="https://media2.giphy.com/media/LHtQ0EcqJCAU6kX2Zk/giphy.gif" alt="doctor gif" height="200" />
             <br />
             <p style={{ fontFamily: 'cursive' }}>Want to view patient's record ⁉️</p>
             <div className="btn-center">
